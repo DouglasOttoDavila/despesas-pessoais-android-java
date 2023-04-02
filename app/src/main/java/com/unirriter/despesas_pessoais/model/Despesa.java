@@ -1,6 +1,8 @@
 package com.unirriter.despesas_pessoais.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Despesa {
 
@@ -57,6 +59,22 @@ public class Despesa {
         System.out.println("Data: " + this.dataDespesa);
         System.out.println("Descrição: " + this.descricaoDespesa);
         System.out.println("Valor: " + this.valorDespesa);
+    }
+
+    public String getDataFormatada() {
+        Locale locale = new Locale("pt", "BR");
+        String pattern = "dd/MM/yyyy";
+        String dataFormatada;
+
+        // Create a SimpleDateFormat object with the desired format
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern, locale);
+
+        // Format the Date value using the SimpleDateFormat object
+        dataFormatada = sdf.format(dataDespesa);
+
+        // Display the formatted date
+        System.out.println(dataFormatada);
+        return dataFormatada;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.unirriter.despesas_pessoais;
+package com.unirriter.despesas_pessoais.view;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.unirriter.despesas_pessoais.R;
 import com.unirriter.despesas_pessoais.view.DespesaAdapter;
 import com.unirriter.despesas_pessoais.model.Despesa;
 import com.unirriter.despesas_pessoais.model.ListaDespesas;

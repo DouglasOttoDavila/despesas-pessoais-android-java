@@ -6,9 +6,12 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import com.unirriter.despesas_pessoais.R;
 import com.unirriter.despesas_pessoais.model.Despesa;
-import com.unirriter.despesas_pessoais.view.MyViewHolder;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Date;
+import java.util.Locale;
 
 public class DespesaAdapter extends RecyclerView.Adapter<MyViewHolder> {
     private ArrayList<Despesa> data;
@@ -27,9 +30,11 @@ public class DespesaAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        String dataDespesa = data.get(position).getDataDespesa().toString();
+        String dataDespesa = data.get(position).getDataFormatada();
         String descricaoDespesa = data.get(position).getDescricaoDespesa();
+        String valorDespesa = String.valueOf(data.get(position).getValorDespesa());
         holder.txtLancamentoDetalhe.setText(descricaoDespesa);
+        holder.txtLancamento.setText(dataDespesa + "\nR$ " + valorDespesa);
     }
 
     @Override
